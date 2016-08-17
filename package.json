@@ -1,9 +1,13 @@
 {
-  "name": "RCTUmengAnalytics",
-  "version": "0.0.1",
-  "private": true,
+  "name": "react-native-umeng-analytics",
+  "version": "0.1.0",
+  "main": "index.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1123746696/react-native-umeng-analytics.git"
   },
   "dependencies": {
   }
