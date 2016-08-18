@@ -11,7 +11,6 @@
 @implementation RCTUmengAnalytics
 RCT_EXPORT_MODULE();
 RCT_EXPORT_METHOD(setAppkeyAndChannelId:(NSString *)key channelId:(NSString *)channelId){
-//  NSLog(@"key,channelId,%@,%@",key,channelId);
   UMConfigInstance.appKey = key;
   UMConfigInstance.channelId = channelId;
   [MobClick startWithConfigure:UMConfigInstance];
