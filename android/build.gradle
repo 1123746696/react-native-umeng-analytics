@@ -23,5 +23,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.umeng.analytics:analytics:latest.integration'
-    compile 'com.facebook.react:react-native:0.29.0'
+    compile 'com.facebook.react:react-native:+'
 }
