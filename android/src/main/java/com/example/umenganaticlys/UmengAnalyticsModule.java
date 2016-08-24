@@ -27,6 +27,7 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void setAppkeyAndChannelId(String key,String channelId) {
         System.out.println("key＝＝＝＝"+key+"  channelId:"+channelId);
+        MobclickAgent.openActivityDurationTrack(false);
         MobclickAgent.startWithConfigure(
                 new MobclickAgent.UMAnalyticsConfig(getCurrentActivity(), key, channelId, MobclickAgent.EScenarioType.E_UM_NORMAL));
 
