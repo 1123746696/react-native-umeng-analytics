@@ -34,6 +34,7 @@ android:value="" />
 | `event` | 事件采集 |
 | `setEncryptEnabled` | 设置是否加密 |
 | `setBackgroundTaskEnabled` | 后台模式（IOS） |
+| `setDebugMode` | 设置调试模式 |
 
 
 
@@ -57,6 +58,9 @@ UmengAnalytics.setEncryptEnabled(true)
 
 //后台模式
 UmengAnalytics.setBackgroundTaskEnabled(true)
+
+//调试模式
+UmengAnalytics.setDebugMode(true)
 
 ```
 

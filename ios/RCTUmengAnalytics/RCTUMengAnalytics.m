@@ -30,4 +30,7 @@ RCT_EXPORT_METHOD(setBackgroundTaskEnabled:(BOOL)value){
 RCT_EXPORT_METHOD(event:(NSString *)event){
   [MobClick event:event];
 }
+RCT_EXPORT_METHOD(setDebugMode:(BOOL)value){
+  [MobClick setLogEnabled:value];
+}
 @end

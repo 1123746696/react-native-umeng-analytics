@@ -26,7 +26,6 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void setAppkeyAndChannelId(String key,String channelId) {
-        System.out.println("key＝＝＝＝"+key+"  channelId:"+channelId);
         MobclickAgent.openActivityDurationTrack(false);
         MobclickAgent.startWithConfigure(
                 new MobclickAgent.UMAnalyticsConfig(getCurrentActivity(), key, channelId, MobclickAgent.EScenarioType.E_UM_NORMAL));
@@ -34,23 +33,23 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
     }
     @ReactMethod
     public void beginLogPageView(String pageName) {
-        System.out.println("beginLogPageView＝＝＝＝"+pageName);
         MobclickAgent.onPageStart(pageName);
-
     }
     @ReactMethod
     public void endLogPageView(String pageName) {
-
-        System.out.println("endLogPageView＝＝＝＝"+pageName);
         MobclickAgent.onPageEnd(pageName);
-
+    }
+    @ReactMethod
+    public void event(String event) {
+        MobclickAgent.onEvent(getCurrentActivity(),event);
     }
     @ReactMethod
     public void setEncryptEnabled(Boolean value) {
         MobclickAgent.enableEncrypt(value);
     }
     @ReactMethod
-    public void event(String event) {
-        MobclickAgent.onEvent(getCurrentActivity(),event);
+    public void setDebugMode(Boolean value) {
+        MobclickAgent.setDebugMode(value);
     }
+
 }

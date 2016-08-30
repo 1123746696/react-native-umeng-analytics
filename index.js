@@ -16,6 +16,9 @@ export default class UMengAnalytics{
     static endLogPageView(pageName:String) {
         UmengAnalyticsModel.endLogPageView(pageName);
     }
+    static event(event:String) {
+        UmengAnalyticsModel.event(event);
+    }
     static setEncryptEnabled(value:Boolean) {
         UmengAnalyticsModel.setEncryptEnabled(value);
     }
@@ -25,7 +28,8 @@ export default class UMengAnalytics{
             UmengAnalyticsModel.setBackgroundTaskEnabled(value);
         }
     }
-    static event(event:String) {
-        UmengAnalyticsModel.event(event);
+    static setDebugMode(value:Boolean) {
+        UmengAnalyticsModel.setDebugMode(value);
     }
+    
 };
