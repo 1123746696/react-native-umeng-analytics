@@ -11,7 +11,7 @@ rnpm link react-native-umeng-analytics
 ##集成到android
 
 
-####3、添加配置
+####添加配置
 在项目工程的`AndroidManifest.xml`中的<Application>标签下添加:
 
 ```
