@@ -6,8 +6,8 @@ rnpm link react-native-umeng-analytics
 ```
 
 ##集成到iOS
-请在你的工程目录结构中，添加友盟统计框架，在选项TARGETS--> Build Phases-->Link Binary With Libraries-->Add Other，选择文件node_modules/react-native-umeng-analytics/ios/umsdk_IOS_analyics_idfa_v4.0.4/UMMobClick.framework
-
+1.请在你的工程目录结构中，添加友盟统计框架，在选项TARGETS--> Build Phases-->Link Binary With Libraries-->Add Other，选择文件node_modules/react-native-umeng-analytics/ios/umsdk_IOS_analyics_idfa_v4.0.4/UMMobClick.framework
+2.在工程目录结构中,添加幽梦框架引用,在TARGETS-->Build Settings-->Framework Search Paths, 添加:$(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/umsdk_IOS_analyics_idfa_v4.0.4
 ##集成到android
 
 
