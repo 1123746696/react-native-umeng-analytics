@@ -28,7 +28,7 @@ android:value="" />
 ```
 在`MainActivity.java`中添加
 ```
-@Override
+    @Override
     public void onResume() {
         super.onResume();
         MobclickAgent.onResume(this);
