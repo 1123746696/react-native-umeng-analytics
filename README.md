@@ -6,7 +6,7 @@ rnpm link react-native-umeng-analytics
 ```
 
 ##集成到iOS
-
+请在你的工程目录结构中，添加友盟统计框架，在选项TARGETS--> Build Phases-->Link Binary With Libraries-->Add Other，选择文件node_modules/react-native-umeng-analytics/ios/umsdk_IOS_analyics_idfa_v4.0.4/UMMobClick.framework
 
 ##集成到android
 
@@ -33,7 +33,7 @@ android:value="" />
 | `endLogPageView` | 退出页面的时候调用的方法 |
 | `event` | 事件采集 |
 | `setEncryptEnabled` | 设置是否加密 |
-| `setBackgroundTaskEnabled` | 设置是否可以在后台运行 |
+| `setBackgroundTaskEnabled` | 后台模式（IOS） |
 
 
 
@@ -55,7 +55,7 @@ UmengAnalytics.event(event)
 //设置加密
 UmengAnalytics.setEncryptEnabled(true)
 
-//后台运行
+//后台模式
 UmengAnalytics.setBackgroundTaskEnabled(true)
 
 ```
