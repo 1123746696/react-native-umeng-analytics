@@ -54,6 +54,7 @@ UmengAnalytics.event(event)
 
 //设置加密
 UmengAnalytics.setEncryptEnabled(true)
+
 //后台运行
 UmengAnalytics.setBackgroundTaskEnabled(true)
 
