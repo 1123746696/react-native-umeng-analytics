@@ -33,4 +33,7 @@ RCT_EXPORT_METHOD(event:(NSString *)event){
 RCT_EXPORT_METHOD(setDebugMode:(BOOL)value){
   [MobClick setLogEnabled:value];
 }
+RCT_EXPORT_METHOD(attributeEvent:(NSString *)event attributes:(NSDictionary *)attributes){
+  [MobClick event:event attributes:attributes];
+}
 @end

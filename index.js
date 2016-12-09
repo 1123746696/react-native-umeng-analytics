@@ -31,5 +31,9 @@ export default class UMengAnalytics{
     static setDebugMode(value:Boolean) {
         UmengAnalyticsModel.setDebugMode(value);
     }
-    
+
+    static attributeEvent(event:String ,type:String,attributes:Object){
+        attributes = Object(attributes,{type:type})
+        UmengAnalyticsModel.attributeEvent(event,attributes)
+    }
 };

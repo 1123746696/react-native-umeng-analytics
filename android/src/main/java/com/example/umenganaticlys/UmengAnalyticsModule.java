@@ -51,5 +51,29 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
     public void setDebugMode(Boolean value) {
         MobclickAgent.setDebugMode(value);
     }
+    @ReactMethod
+    public void attributeEvent(String event, ReadableMap attributes) {
+        MobclickAgent.onEvent(getCurrentActivity(), event, recursivelyDeconstructReadableMap(attributes));
+    }
 
+    private Map<String, String> recursivelyDeconstructReadableMap(ReadableMap readableMap) {
+        ReadableMapKeySetIterator iterator = readableMap.keySetIterator();
+        Map<String, String> deconstructedMap = new HashMap<>();
+        while (iterator.hasNextKey()) {
+            String key = iterator.nextKey();
+            ReadableType type = readableMap.getType(key);
+            switch (type) {
+                case Null:
+                    deconstructedMap.put(key, null);
+                    break;
+                case String:
+                    deconstructedMap.put(key, readableMap.getString(key));
+                    break;
+                default:
+                    throw new IllegalArgumentException("Could not convert object with key: " + key + ".");
+            }
+
+        }
+        return deconstructedMap;
+    }
 }
