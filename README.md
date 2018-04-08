@@ -16,16 +16,16 @@ rnpm link react-native-umeng-analytics
 
 
 ####添加配置
-在项目工程的`AndroidManifest.xml`中的<Application>标签下添加:
+在`MainApplication`中添加
+```
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        UMConfigure.init(this, key, channelId, UMConfigure.DEVICE_TYPE_PHONE, null);
+        MobclickAgent.openActivityDurationTrack(false);
+    }
+```
 
-```
-<meta-data
-android:name="UMENG_APPKEY"
-android:value="" />
-<meta-data
-android:name="UMENG_CHANNEL"
-android:value="" />
-```
 在`MainActivity.java`中添加
 ```
     @Override
@@ -48,13 +48,12 @@ android:value="" />
 
 | API | Note |    
 |---|---|
-| `setAppkeyAndChannelId` | 设置UmengKey和channelId |
 | `beginLogPageView` | 进入页面的时候调用的方法 |
 | `endLogPageView` | 退出页面的时候调用的方法 |
 | `event` | 事件采集 |
-| `setEncryptEnabled` | 设置是否加密 |
-| `setBackgroundTaskEnabled` | 后台模式（IOS） |
 | `setDebugMode` | 设置调试模式 |
+| `onProfileSignIn` | 用户登录 |
+| `onProfileSignOff` | 用户注销 |
 
 
 
@@ -63,9 +62,6 @@ android:value="" />
 ```
 import UmengAnalytics from 'react-native-umeng-analytics'
 
-//设置UmengKey和channelId
-UmengAnalytics.setAppkeyAndChannelId(umengKey,umengChannel);
-
 //页面采集
 UmengAnalytics.beginLogPageView(currentPage);
 UmengAnalytics.endLogPageView(currentPage);
@@ -73,14 +69,14 @@ UmengAnalytics.endLogPageView(currentPage);
 //事件采集
 UmengAnalytics.event(event)
 
-//设置加密
-UmengAnalytics.setEncryptEnabled(true)
-
-//后台模式
-UmengAnalytics.setBackgroundTaskEnabled(true)
-
 //调试模式
 UmengAnalytics.setDebugMode(true)
+
+//用户登录采集
+UmengAnalytics.onProfileSignIn(userId)
+
+//用户注销
+UmengAnalytics.onProfileSignOff()
 
 ```
 
