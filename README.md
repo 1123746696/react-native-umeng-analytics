@@ -14,6 +14,8 @@ rnpm link react-native-umeng-analytics
 $(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/analytics_ios_5.4.1<br>
 $(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/normal<br>
 
+3.添加依赖库：CoreTelephony.framework，libz.tbd，libsqlite.tbd，SystemConfiguration.framework
+
 在`AppDelegate.m`中添加
 ```
 #import "RNUMConfigure.h"
@@ -25,12 +27,20 @@ $(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/nor
 ```
 
 
-详情参考：[友盟IOSSDK集成指南](http://dev.umeng.com/analytics/ios-doc/integration)<br>
+详情参考：[友盟IOSSDK集成指南](https://developer.umeng.com/docs/66632/detail/66898)<br>
 
 ##集成到android
 
 
 ####添加配置
+在`AndroidManifest.xml`中添加权限
+```
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+```
+
 在`MainApplication`中添加
 ```
     @Override
@@ -57,7 +67,7 @@ $(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/nor
     }
 ```
 
-详情参考：[友盟AndroidSDK集成指南](http://dev.umeng.com/analytics/android-doc/integration)<br>
+详情参考：[友盟AndroidSDK集成指南](https://developer.umeng.com/docs/66632/detail/66889)<br>
 
 ##API
 
