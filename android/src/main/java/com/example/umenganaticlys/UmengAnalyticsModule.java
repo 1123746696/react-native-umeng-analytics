@@ -1,10 +1,13 @@
 package com.example.umenganaticlys;
 
 
+import android.util.Log;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
 
 /**
  * Created by user on 16/6/15.
@@ -26,17 +29,20 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void setAppkeyAndChannelId(String key,String channelId) {
+//        MobclickAgent.openActivityDurationTrack(false);
+//        UMConfigure.init(getCurrentActivity(), UMConfigure.DEVICE_TYPE_PHONE, key);
+        UMConfigure.init(getCurrentActivity(), key, channelId, UMConfigure.DEVICE_TYPE_PHONE, null);
+        UMConfigure.setLogEnabled(true);
         MobclickAgent.openActivityDurationTrack(false);
-        MobclickAgent.startWithConfigure(
-                new MobclickAgent.UMAnalyticsConfig(getCurrentActivity(), key, channelId, MobclickAgent.EScenarioType.E_UM_NORMAL));
-
     }
     @ReactMethod
     public void beginLogPageView(String pageName) {
+        Log.i("beginLogPageView",pageName);
         MobclickAgent.onPageStart(pageName);
     }
     @ReactMethod
     public void endLogPageView(String pageName) {
+        Log.i("endLogPageView",pageName);
         MobclickAgent.onPageEnd(pageName);
     }
     @ReactMethod
@@ -45,11 +51,19 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
     }
     @ReactMethod
     public void setEncryptEnabled(Boolean value) {
-        MobclickAgent.enableEncrypt(value);
+        UMConfigure.setEncryptEnabled(value);
     }
     @ReactMethod
     public void setDebugMode(Boolean value) {
-        MobclickAgent.setDebugMode(value);
+        UMConfigure.setLogEnabled(value);
+    }
+    @ReactMethod
+    public void onProfileSignIn(String userID) {
+        MobclickAgent.onProfileSignIn(userID);
+    }
+    @ReactMethod
+    public void onProfileSignOff() {
+        MobclickAgent.onProfileSignOff();
     }
 
 }

@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		CE26B1DB1D64421700D853E8 /* RCTUmengAnalytics.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE26B1DA1D64421700D853E8 /* RCTUmengAnalytics.h */; };
 		CE26B1DD1D64421700D853E8 /* RCTUmengAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = CE26B1DC1D64421700D853E8 /* RCTUmengAnalytics.m */; };
-		CE7908181D6ACC0400E30741 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7908171D6ACC0400E30741 /* UMMobClick.framework */; };
+		CEC319D92060F812004C3AF1 /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC319D82060F812004C3AF1 /* UMAnalytics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		CEC319DC2060F86A004C3AF1 /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC319DB2060F869004C3AF1 /* RNUMConfigure.m */; };
+		CEC319E02060FA24004C3AF1 /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC319DF2060FA24004C3AF1 /* UMCommon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +31,13 @@
 		CE26B1D81D64421700D853E8 /* libRCTUmengAnalytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTUmengAnalytics.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE26B1DA1D64421700D853E8 /* RCTUmengAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTUmengAnalytics.h; sourceTree = "<group>"; };
 		CE26B1DC1D64421700D853E8 /* RCTUmengAnalytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTUmengAnalytics.m; sourceTree = "<group>"; };
-		CE7908171D6ACC0400E30741 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
+		CEC319D82060F812004C3AF1 /* UMAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAnalytics.framework; sourceTree = "<group>"; };
+		CEC319DA2060F869004C3AF1 /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUMConfigure.h; sourceTree = "<group>"; };
+		CEC319DB2060F869004C3AF1 /* RNUMConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUMConfigure.m; sourceTree = "<group>"; };
+		CEC319DF2060FA24004C3AF1 /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
+		CEEC478F2071FECA006BA8ED /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		CEEC47912071FEDD006BA8ED /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CEEC47932071FEEB006BA8ED /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7908181D6ACC0400E30741 /* UMMobClick.framework in Frameworks */,
+				CEC319D92060F812004C3AF1 /* UMAnalytics.framework in Frameworks */,
+				CEC319E02060FA24004C3AF1 /* UMCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,9 +56,11 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				CE26B2481D6454F000D853E8 /* umsdk_IOS_analyics_idfa_v4.0.4 */,
+				CEC319DD2060FA24004C3AF1 /* common_ios_1.4.2 */,
+				CEC319D72060F812004C3AF1 /* analytics_ios_5.4.1 */,
 				CE26B1D91D64421700D853E8 /* RCTUmengAnalytics */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				CEEC478E2071FECA006BA8ED /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -66,18 +77,46 @@
 		CE26B1D91D64421700D853E8 /* RCTUmengAnalytics */ = {
 			isa = PBXGroup;
 			children = (
+				CEC319DA2060F869004C3AF1 /* RNUMConfigure.h */,
+				CEC319DB2060F869004C3AF1 /* RNUMConfigure.m */,
 				CE26B1DA1D64421700D853E8 /* RCTUmengAnalytics.h */,
 				CE26B1DC1D64421700D853E8 /* RCTUmengAnalytics.m */,
 			);
 			path = RCTUmengAnalytics;
 			sourceTree = "<group>";
 		};
-		CE26B2481D6454F000D853E8 /* umsdk_IOS_analyics_idfa_v4.0.4 */ = {
+		CEC319D72060F812004C3AF1 /* analytics_ios_5.4.1 */ = {
 			isa = PBXGroup;
 			children = (
-				CE7908171D6ACC0400E30741 /* UMMobClick.framework */,
+				CEC319D82060F812004C3AF1 /* UMAnalytics.framework */,
 			);
-			path = umsdk_IOS_analyics_idfa_v4.0.4;
+			path = analytics_ios_5.4.1;
+			sourceTree = "<group>";
+		};
+		CEC319DD2060FA24004C3AF1 /* common_ios_1.4.2 */ = {
+			isa = PBXGroup;
+			children = (
+				CEC319DE2060FA24004C3AF1 /* normal */,
+			);
+			path = common_ios_1.4.2;
+			sourceTree = "<group>";
+		};
+		CEC319DE2060FA24004C3AF1 /* normal */ = {
+			isa = PBXGroup;
+			children = (
+				CEC319DF2060FA24004C3AF1 /* UMCommon.framework */,
+			);
+			path = normal;
+			sourceTree = "<group>";
+		};
+		CEEC478E2071FECA006BA8ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEEC47932071FEEB006BA8ED /* libsqlite3.tbd */,
+				CEEC47912071FEDD006BA8ED /* libz.tbd */,
+				CEEC478F2071FECA006BA8ED /* CoreTelephony.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC319DC2060F86A004C3AF1 /* RNUMConfigure.m in Sources */,
 				CE26B1DD1D64421700D853E8 /* RCTUmengAnalytics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,8 +278,8 @@
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/umsdk_IOS_analyics_idfa_v4.0.4/**",
-					"$(PROJECT_DIR)/umsdk_IOS_analyics_idfa_v4.0.4",
+					"$(PROJECT_DIR)/analytics_ios_5.4.1/**",
+					"$(PROJECT_DIR)/common_ios_1.4.2/normal/**",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
@@ -248,8 +288,9 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(PROJECT_DIR)/umsdk_IOS_analyics_idfa_v4.0.4/**\"/**",
 					"$(inherited)",
+					"\"$(PROJECT_DIR)/common_ios_1.4/normal/**\"",
+					"\"$(PROJECT_DIR)/analytics_ios_5.4/**\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -268,8 +309,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/umsdk_IOS_analyics_idfa_v4.0.4/**",
-					"$(PROJECT_DIR)/umsdk_IOS_analyics_idfa_v4.0.4",
+					"$(PROJECT_DIR)/analytics_ios_5.4.1/**",
+					"$(PROJECT_DIR)/common_ios_1.4.2/normal/**",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
@@ -278,8 +319,9 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(PROJECT_DIR)/umsdk_IOS_analyics_idfa_v4.0.4/**\"/**",
 					"$(inherited)",
+					"\"$(PROJECT_DIR)/common_ios_1.4/normal/**\"",
+					"\"$(PROJECT_DIR)/analytics_ios_5.4/**\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

@@ -7,11 +7,13 @@ import React, {
 } from 'react-native';
 var UmengAnalyticsModel = require('react-native').NativeModules.UmengAnalytics;
 export default class UMengAnalytics{
-    static setAppkeyAndChannelId(key:String,channelId:String) {
-        UmengAnalyticsModel.setAppkeyAndChannelId(key,channelId);
-    }
+    static previousPage = ''
     static beginLogPageView(pageName:String) {
+        if(!!UMengAnalytics.previousPage){
+            UmengAnalyticsModel.endLogPageView(UMengAnalytics.previousPage);
+        }
         UmengAnalyticsModel.beginLogPageView(pageName);
+        UMengAnalytics.previousPage = pageName
     }
     static endLogPageView(pageName:String) {
         UmengAnalyticsModel.endLogPageView(pageName);
@@ -19,17 +21,13 @@ export default class UMengAnalytics{
     static event(event:String) {
         UmengAnalyticsModel.event(event);
     }
-    static setEncryptEnabled(value:Boolean) {
-        UmengAnalyticsModel.setEncryptEnabled(value);
-    }
-
-    static setBackgroundTaskEnabled(value:Boolean) {
-        if(Platform.OS==='ios'){
-            UmengAnalyticsModel.setBackgroundTaskEnabled(value);
-        }
-    }
     static setDebugMode(value:Boolean) {
         UmengAnalyticsModel.setDebugMode(value);
     }
-    
+    static onProfileSignIn(userID) {
+        UmengAnalyticsModel.onProfileSignIn(userID);
+    }
+    static onProfileSignOff() {
+        UmengAnalyticsModel.onProfileSignOff();
+    }
 };
