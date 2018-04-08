@@ -5,10 +5,25 @@ npm install react-native-umeng-analytics
 rnpm link react-native-umeng-analytics
 ```
 
-##集成到iOS
-1.请在你的工程目录结构中，添加友盟统计框架，在选项TARGETS--> Build Phases-->Link Binary With Libraries-->Add Other，选择文件node_modules/react-native-umeng-analytics/ios/umsdk_IOS_analyics_idfa_v4.0.4/UMMobClick.framework<br>
+##集成到iOS<br>
+1.请在你的工程目录结构中，添加友盟统计框架，在选项TARGETS--> Build Phases-->Link Binary With Libraries-->Add Other，
+选择文件node_modules/react-native-umeng-analytics/ios/analytics_ios_5.4.1/UMAnalytics.framework<br>
+选择文件node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/normal/UMCommon.framework<br>
 
-2.在工程目录结构中,添加友盟框架引用,在TARGETS-->Build Settings-->Framework Search Paths, 添加:$(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/umsdk_IOS_analyics_idfa_v4.0.4<br>
+2.在工程目录结构中,添加友盟框架引用,在TARGETS-->Build Settings-->Framework Search Paths, 添加:<br>
+$(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/analytics_ios_5.4.1<br>
+$(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/normal<br>
+
+在`AppDelegate.m`中添加
+```
+#import "RNUMConfigure.h"
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  [RNUMConfigure initWithAppkey:key channel:channelId];
+  return YES;
+}
+```
+
 
 详情参考：[友盟IOSSDK集成指南](http://dev.umeng.com/analytics/ios-doc/integration)<br>
 
