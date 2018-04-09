@@ -100,6 +100,9 @@ UmengAnalytics.setDebugMode(true)
 //用户登录采集
 UmengAnalytics.onProfileSignIn(userId)
 
+//第三方用户登录采集
+UmengAnalytics.onProfileSignIn(provider,userId)
+
 //用户注销
 UmengAnalytics.onProfileSignOff()
 
