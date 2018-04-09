@@ -66,6 +66,18 @@ $(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/nor
         MobclickAgent.onPause(this);
     }
 ```
+代码混淆
+
+```
+-keep class com.umeng.** {*;}
+-keepclassmembers class * {
+   public <init> (org.json.JSONObject);
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+```
 
 详情参考：[友盟AndroidSDK集成指南](https://developer.umeng.com/docs/66632/detail/66889)<br>
 
@@ -78,6 +90,7 @@ $(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/nor
 | `event` | 事件采集 |
 | `setDebugMode` | 设置调试模式 |
 | `onProfileSignIn` | 用户登录 |
+| `onProfileSignInWithProvider` | 第三方用户登录 |
 | `onProfileSignOff` | 用户注销 |
 
 
@@ -101,7 +114,7 @@ UmengAnalytics.setDebugMode(true)
 UmengAnalytics.onProfileSignIn(userId)
 
 //第三方用户登录采集
-UmengAnalytics.onProfileSignIn("WB",userId)
+UmengAnalytics.onProfileSignInWithProvider("WB",userId)
 
 //用户注销
 UmengAnalytics.onProfileSignOff()
