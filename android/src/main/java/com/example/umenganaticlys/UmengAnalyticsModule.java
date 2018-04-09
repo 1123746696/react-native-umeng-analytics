@@ -62,7 +62,7 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
         MobclickAgent.onProfileSignIn(userID);
     }
     @ReactMethod
-    public void onProfileSignIn(String Provider,String userID) {
+    public void onProfileSignInWithProvider(String Provider,String userID) {
         MobclickAgent.onProfileSignIn(Provider,userID);
     }
     @ReactMethod
