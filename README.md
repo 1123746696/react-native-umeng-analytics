@@ -2,7 +2,7 @@
 ##安装
 ```
 npm install react-native-umeng-analytics
-rnpm link react-native-umeng-analytics
+react-native link react-native-umeng-analytics
 ```
 
 ##集成到iOS<br>
@@ -86,7 +86,6 @@ $(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/nor
 | API | Note |    
 |---|---|
 | `beginLogPageView` | 进入页面的时候调用的方法 |
-| `endLogPageView` | 退出页面的时候调用的方法 |
 | `event` | 事件采集 |
 | `setDebugMode` | 设置调试模式 |
 | `onProfileSignIn` | 用户登录 |
@@ -102,7 +101,6 @@ import UmengAnalytics from 'react-native-umeng-analytics'
 
 //页面采集
 UmengAnalytics.beginLogPageView(currentPage);
-UmengAnalytics.endLogPageView(currentPage);
 
 //事件采集
 UmengAnalytics.event(event)
