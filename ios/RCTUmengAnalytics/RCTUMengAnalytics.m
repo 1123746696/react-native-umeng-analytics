@@ -50,6 +50,15 @@ RCT_EXPORT_METHOD(onProfileSignIn:(NSString *)userID){
   }
   [MobClick profileSignInWithPUID:userID];
 }
+RCT_EXPORT_METHOD(onProfileSignInWithProvider:(NSString *)provider userID:(NSString *)userID){
+  if (userID == nil || [userID isKindOfClass:[NSNull class]]) {
+    return;
+  }
+  if (provider == nil || [provider isKindOfClass:[NSNull class]]) {
+    return;
+  }
+  [MobClick profileSignInWithPUID:userID provider:provider];
+}
 RCT_EXPORT_METHOD(onProfileSignOff){
   [MobClick profileSignOff];
 }

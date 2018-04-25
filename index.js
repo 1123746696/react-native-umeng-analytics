@@ -27,6 +27,9 @@ export default class UMengAnalytics{
     static onProfileSignIn(userID) {
         UmengAnalyticsModel.onProfileSignIn(userID);
     }
+    static onProfileSignInWithProvider(provider,userID){
+        UmengAnalyticsModel.onProfileSignInWithProvider(provider,userID);
+    }
     static onProfileSignOff() {
         UmengAnalyticsModel.onProfileSignOff();
     }
