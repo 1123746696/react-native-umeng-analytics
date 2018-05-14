@@ -6,8 +6,12 @@ import android.util.Log;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.ReadableNativeMap;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
+
+import java.util.Map;
 
 /**
  * Created by user on 16/6/15.
@@ -48,6 +52,12 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void event(String event) {
         MobclickAgent.onEvent(getCurrentActivity(),event);
+    }
+    @ReactMethod
+    public void eventWithAttributes(String event,ReadableMap attributes) {
+        ReadableNativeMap map2 = (ReadableNativeMap)attributes;
+        Map useMap = map2.toHashMap();
+        MobclickAgent.onEvent(getCurrentActivity(),event,useMap);
     }
     @ReactMethod
     public void setEncryptEnabled(Boolean value) {

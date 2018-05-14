@@ -21,6 +21,9 @@ export default class UMengAnalytics{
     static event(event:String) {
         UmengAnalyticsModel.event(event);
     }
+    static eventWithAttributes(event:String,attributes:Object) {
+        UmengAnalyticsModel.eventWithAttributes(event,attributes);
+    }
     static setDebugMode(value:Boolean) {
         UmengAnalyticsModel.setDebugMode(value);
     }

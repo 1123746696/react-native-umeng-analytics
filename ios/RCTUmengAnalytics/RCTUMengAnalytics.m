@@ -41,6 +41,12 @@ RCT_EXPORT_METHOD(event:(NSString *)event){
   }
   [MobClick event:event];
 }
+RCT_EXPORT_METHOD(eventWithAttributes:(NSString *)event attributes:(NSDictionary *)attributes){
+  if (event == nil || [event isKindOfClass:[NSNull class]]) {
+    return;
+  }
+  [MobClick event:event attributes:attributes];
+}
 RCT_EXPORT_METHOD(setDebugMode:(BOOL)value){
   [UMConfigure setLogEnabled:value];
 }

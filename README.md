@@ -87,6 +87,7 @@ $(SRCROOT)/../node_modules/react-native-umeng-analytics/ios/common_ios_1.4.2/nor
 |---|---|
 | `beginLogPageView` | 进入页面的时候调用的方法 |
 | `event` | 事件采集 |
+| `eventWithAttributes` | 带属性的事件采集 |
 | `setDebugMode` | 设置调试模式 |
 | `onProfileSignIn` | 用户登录 |
 | `onProfileSignInWithProvider` | 第三方用户登录 |
@@ -104,6 +105,7 @@ UmengAnalytics.beginLogPageView(currentPage);
 
 //事件采集
 UmengAnalytics.event(event)
+UmengAnalytics.eventWithAttributes(event,attributes)
 
 //调试模式
 UmengAnalytics.setDebugMode(true)
